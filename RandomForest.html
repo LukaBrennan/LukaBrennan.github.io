@@ -22,8 +22,8 @@
 
     <section id="titanic" class="hero">
         <div class="container">
-            <h1>Titanic Survival Prediction using Random Forest</h1>
-            <p>A machine learning project that uses the Random Forest algorithm to predict the survival chances of Titanic passengers.</p>
+            <h1>Titanic Survival Prediction</h1>
+            <p>A machine learning project that uses linear regression to predicting the survival chance of Titanic passengers</p>
         </div>
     </section>
 
@@ -31,64 +31,59 @@
         <h2>Project Overview</h2>
         <div class="project-content">
             <p>Why choose this?</p>
-            <p>Although this project has no practical use, I believe it highlights how significantly age class and gender affected survival chances aboard the Titanic.</p>         
-            <p>This project showcases how machine learning algorithms like Random Forest can model complex relationships between features, such as age, gender, and class, to predict survival chances aboard the Titanic.</p>             
-            <p>The Random Forest algorithm was selected for its accuracy and ability to handle both numerical and categorical data effectively.</p>
-            <p>For this project, data such as age, gender, passenger class, and survival status were used for predictions.</p>
+            <p>Although this project has no real use outside of being interesting, i believe it shows just how different the survival chance of Age and Class really mattered back on the Titanic.</p>             <p>This project aims to predicate the survival chance of people who were on the titanic.</p>
+            <p>This project used liner regression to test the capability of it, even though for a project such as this something such as Random Forest would be preferred.</p> 
+            <p>When making predictions to this project, data such as the Age, Gender, Survived were used for these predictions.</p>
         </div>
     </section>
 
     <section id="Data-Sources" class="about">
-        <h2>Data Sources</h2>
-        <p>The Titanic dataset from Kaggle was used as the primary source for this project.</p>
-        <p>The dataset required significant pre-processing, including handling missing values, encoding categorical variables, and selecting relevant features for training the Random Forest model.</p>
-        <p>Pre-processing steps included:</p>
-        <ul>
-            <li>Filling missing values in the 'Age' column with the median age.</li>
-            <li>Converting the 'Sex' column into numerical values (e.g., male = 0, female = 1).</li>
-            <li>Focusing on features such as passenger class, age, and gender for training the model.</li>
-        </ul>
+        <h2>Data sources</h2>
+        <p>With this being such a niche project idea, there was only one place to get the dataset needed to make these predications, that being Kaggle.</p> 
+        <p>The dataset taken from Kaggle was for the majority useful, however there were missing data throughout the dataset that was dropped when it cam to the coding, as having these null or empty values could troublesome and give inaccurate predications.</p> 
+        <p>So as the data was being cleaned (removing empty values), generating a graph would be possible.</p>
     </section>
 
-    <section id="Data-Visualization" class="about">
-        <h2>Data Visualization and Understanding</h2>
-        <p>Using Python (jupiter Notebook) and Matplotlib, I visualized a single decision tree from the Random Forest model. This visualization highlights how individual trees in the Random Forest make decisions based on splits in the data.</p>
-        <p>The visualization shows splits based on features like gender, passenger class, and age, providing insight into the survival likelihood for different groups of passengers.</p>
-        <p>Below are different decision trees that I have gotten from running my random forest code, each one is different from the other</p>         <img src="RandomForest-1.png" alt="Random Forest Visualization" class="profile-img">
-        <img src="RandomForest-2.png" alt="Random Forest Visualization" class="profile-img">
-        <img src="RandomForest-3.png" alt="Random Forest Visualization" class="profile-img">
-        <img src="RandomForest-4.png" alt="Random Forest Visualization" class="profile-img">
+    <section id="Data-visualization" class="about">
+        <h2>Data visualization and understanding</h2>
+        <p> Using python, I was able to design a Graph using scatter plots to design a liner regression models.</p> 
+        <p>This model showcases the survival Chace with different age groups during the Titanic.</p> 
+        <img src="Graph.jpg" alt="Profile image of Luka Brennan" class="profile-img">
+        <p> During the sinking of the Titanic, Women and children were the first to be on the life rafts, because of this as seen by the graph children had a higher survival chance. Class does also come into effect with this as 1st class were also the first to be released onto the life rafts.
+        </p>
+
     </section>
 
     <section id="Algorithms" class="about">
         <h2>Algorithms</h2>
-        <p>The Random Forest algorithm was used due to its robust performance and ability to handle data with missing values and non-linear relationships.</p>
-        <p>Random Forest operates by building multiple decision trees during training and outputting the class (survival or not) that is the mode of the classes (classification) of the individual trees.</p>
-        <p>By limiting the depth of the trees and using multiple estimators, the model avoids overfitting and produces generalizable predictions.</p>
+        <p>this is to showcase the use of liner reggression, trying to see how differnt data sets work with it.</p>
+        <p>Using Titanic survial chance for a liner regression model is not the best use as something like ranodm forest would be preferable, but for this project liner regression was used to test the boundries of it.</p>
     </section>
 
-    <section id="Online-Sources" class="about">
+    <section id="Online-Sources " class="about">
         <h2>Online Sources</h2>
-        <p>Online tutorials and documentation played a crucial role in implementing the Random Forest algorithm. Key resources included:</p>
-        <p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">Scikit-Learn Random Forest Documentation</a></p>
-        <p><a href="https://www.kaggle.com/">Kaggle Titanic Dataset</a></p>
+        <P> going into this my knowledge of liner regression was very limited, so the use of online material was very helpful in the understanding of this.</P> 
+        <p>Sources such as <a href="https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/05.06-Linear-Regression.ipynb">Python Data Science Handbook</a> as a starting point, provide great information and graphs on how to start and detailed explanations on which piece of code.</p>
+        <p>This helped me to begin my project and get a better understanding of how liner regression works.</p>
     </section>
 
     <section id="Tools-Used" class="about">
         <h2>Tools Used</h2>
-        <p>This project was implemented using the following tools:</p>
-        <ul>
-            <li>Jupyter Notebook: For developing and running the Python code.</li>
-            <li>Pandas: For data manipulation and preprocessing.</li>
-            <li>NumPy: For efficient numerical computations.</li>
-            <li>Scikit-Learn: For implementing and visualizing the Random Forest model.</li>
-            <li>Matplotlib: For visualizing decision trees from the Random Forest.</li>
-        </ul>
+        <p> This project was done using Jupiter notebook, which i am already familiar with. However i was not familiar with Pandas and NumPy.</p> 
+        <p>Using NumPy allowed me to perform numerical operations seamlessly and improved the performance of my data processing tasks, especially when dealing with large datasets.</p>
+        <p>Pandas significantly streamlined my data preparation and analysis process, enabling me to focus on extracting insights rather than managing data complexities. Its intuitive syntax and powerful features allowed for efficient data manipulation and exploration.</p>
+        <p>In summary, NumPy and Pandas were integral to my project, facilitating efficient numerical computations and data manipulations. Their capabilities enabled me to derive meaningful insights from the Titanic dataset.</p>
+    </section>
+
+    <section id="Pre-Processing" class="about">
+        <h2>Pre Processing</h2>
+        <p>The dataset taken from Kaggle was not the best, missing data fields and non numerical values which could not be used properly for liner regression.</p> 
+        <p>due to this I had to undergo data cleansing and understanding of the data. this meant removing any empty values which could cause problems with the predications. also needed to know what each data field meat and how to use that for calculations, using only relevant data.</p> 
     </section>
 
     <footer>
-        &copy; 2024 Luka Brennan. All rights reserved.
-        <p><a href="https://github.com/LukaBrennan">GitHub</a></p>
+        &copy; 2024 Luka Brennan. All Rights Reserved.
+        <p><a href="https://github.com/LukaBrennan">Github</a></p>
     </footer>
 
 </body>
