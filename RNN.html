@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Genre Classification</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="music-genre" class="hero">
+        <div class="container">
+            <h1>Music Genre Classification using <strong>Recurrent Neural Network (RNN)</strong></h1>
+            <p>A machine learning project that uses <strong>RNN with LSTM</strong> to classify audio files into musical genres.</p>
+        </div>
+    </section>
+
+    <section id="project-details" class="projects">
+        <h2>Project Overview</h2>
+        <div class="project-content">
+            <p><strong>Why choose this?</strong></p>
+            <p>I chose to implement an RNN with LSTM architecture for music genre classification to explore sequential data processing in audio signals. The GTZAN dataset provided a well-structured collection of audio files across multiple genres, making it ideal for this learning project.</p>
+        </div>
+    </section>
+
+    <section id="data-sources" class="about">
+        <h2>Dataset & Preprocessing</h2>
+        <p>The <strong>GTZAN dataset</strong> was used, containing 1,000 audio tracks across 10 genres (blues, classical, country, etc.), each 30 seconds long.</p>
+        <p>Key preprocessing steps:</p>
+        <ul>
+            <li>Audio files loaded using Librosa with a fixed 30-second duration</li>
+            <li>Mel Spectrograms extracted (128 Mel bands) as primary features</li>
+            <li>MFCCs initially considered but ultimately not used in final model</li>
+            <li>Features transposed to (time_steps, n_features) for RNN compatibility</li>
+            <li>Data split into training (64%), validation (16%), and test (20%) sets</li>
+        </ul>
+    </section>
+
+    <section id="challenges" class="about">
+        <h2>Challenges & Solutions</h2>
+        <p>The development process presented several technical challenges:</p>
+        
+        <h3>1. Input Dimension Mismatch</h3>
+        <p><strong>Problem:</strong> Initial attempts resulted in a runtime error: "input.size(-1) must be equal to input_size. Expected 128, got 1292"</p>
+        <p><strong>Cause:</strong> The Mel spectrogram from Librosa returns shape (n_mels, time_steps) but the RNN expected (time_steps, n_features)</p>
+        <p><strong>Solution:</strong> Transposed the spectrogram matrix before tensor conversion</p>
+        <pre><code>mel_spec_db = librosa.power_to_db(mel_spec, ref=np.max).T</code></pre>
+
+        <h3>2. Feature Extraction Issues</h3>
+        <p><strong>Problem:</strong> Function return value mismatch when modifying feature extraction</p>
+        <p><strong>Cause:</strong> Changed function to return only Mel spectrogram but kept old unpacking code</p>
+        <p><strong>Solution:</strong> Standardized feature extraction to consistently return transposed Mel spectrograms</p>
+
+        <h3>3. CUDA Implementation</h3>
+        <p><strong>Problem:</strong> Slow training times on CPU</p>
+        <p><strong>Solution:</strong> Implemented CUDA support after verifying GPU availability:</p>
+        <pre><code>device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')model.to(device)</code></pre>
+
+        <h3>4. Critical CUDA Error</h3>
+        <p><strong>Problem:</strong></p> When the app is ran, the following error keeps coming up, <strong>See attached image below</strong>
+        <img src ="CUDA-Error.png" alt="CUDA Error" class="profile-img">
+        <p><strong>No solution could be found:</strong></p> A whole day was spent on login, testing new code, uninstalling nd reinstalling imports and python. However a solution could not be found for this.
+    </section>
+
+    <section id="Online Sources" class="about">
+        <h2>Online Sources</h2>
+        <ul>
+            <li><a href="https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification">GTZAN Dataset</a></li>
+            <li><a href="https://github.com/fabien-brulport/RNN-Sound-classification/blob/master/RNN.py">An example NoteBook which show RNN</a></li>
+            <li><a href="https://stackoverflow.com/questions/68166721/pytorch-fails-with-cuda-error-device-side-assert-triggered-on-colab">Stack Overflow discussion board about the CUDA problem</a></li>
+        </ul>
+    </section>
+
+    <section id="Tools-Used" class="about">
+        <h2>Tools Used</h2>
+        <p>This project was implemented using the following tools:</p>
+        <ul>
+            <li><strong>PyTorch</strong>: For building and training the RNN model</li>
+            <li><strong>Librosa</strong>: For Audio feature extraction</li>
+            <li><strong>Jupyter Notebook</strong>: For developing and running the Python code</li>
+            <li><strong>Matplotlib/Seaborn</strong>: For visualizations and performance metrics</li>
+            <li><strong>Scikit-learn</strong>: For generating classification reports</li>
+        </ul>
+    </section>
+
+    <footer>
+        &copy; 2024 Your Name. All rights reserved.
+        <p><a href="https://github.com/yourusername/music-genre-classification"><strong>View Project on GitHub</strong></a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insect classification</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="Insect" class="hero">
+        <div class="container">
+            <h1>Insect classification using <strong>Convolutional Neural Network (CNN)</strong></h1>
+            <p>A machine learning project that uses <strong>CNN</strong> to predict the species of insect, based on the image provided.</p>
+        </div>
+    </section>
+
+    <section id="project-details" class="projects">
+        <h2>Project Overview</h2>
+        <div class="project-content">
+            <p><strong>Why choose this?</strong></p>
+            <p>When searching for a suitable dataset to use for this project, I wanted to pick something that was interesting to me and could have real-world applications. Then I came across the BAUInsectv2 dataset which I found to be an interesting opportunity to apply CNNs to agricultural pest identification.</p>         
+            <p>The model demonstrates how <strong>Convolutional layers</strong> can automatically learn features from images, progressing from simple edges to complex patterns. With the implemented prediction function, users can upload insect photos and receive immediate species classification.</p>             
+            <p><strong>CNNs</strong> were selected for this project because of their exceptional performance in image classification tasks. Their ability to learn spatial hierarchies of features makes them ideal for distinguishing between different insect species, even when they appear in different orientations or positions within the image.</p>
+            <p>The dataset contained 9 insect classes including aphids, armyworms, and beetles, with separate train/test folders for each species. All images were standardized to 150x150 pixels for consistent processing.</p>
+        </div>
+    </section>
+
+    <section id="Data-Sources" class="about">
+        <h2>Data Sources/Preprocessing</h2>
+        <p>The <strong>BAUInsectv2 dataset</strong> was sourced from <strong>Kaggle</strong>, containing images of 9 different insect species.</p>
+        <p>Significant preprocessing was required to prepare the images for the CNN:</p>
+        <ul>
+            <li>All images were resized to 150x150 pixels for consistency</li>
+            <li>Pixel values were normalized using calculated mean and standard deviation</li>
+            <li>Images were converted to PyTorch tensors</li>
+            <li>Data was organized using ImageFolder with class-specific subdirectories</li>
+        </ul>
+    </section>
+
+    <section id="Data-Visualization" class="about">
+        <h2>Model Evaluation</h2>
+        <p>Using <strong>Python (Jupyter Notebook)</strong> and libraries like <strong>matplotlib</strong> and <strong>seaborn</strong>, I tracked the model's training progress and evaluated its performance.</p>
+        <p>The training process showed consistent improvement across 11 epochs, with the loss decreasing from [initial value] to [final value]. Repeated runs of the model would take around 6-8 minuets due to the size of the dataset, although that does not seem long, between errors occurring and rewriting code, having to wait that time during the training and waiting for each epoch was to much time. Implanting CUDAS to the model would allow it to use the GPU on my machine. This increased the speed for the training. While the model achieved <strong>95% accuracy</strong>, the confusion matrix revealed some areas where species were occasionally misclassified.</p>
+        <p>A <strong>classification report</strong> was generated to provide detailed metrics (precision, recall, F1-score) for each insect class, helping identify which species were most challenging for the model to distinguish.</p>
+        <p>Below are the <strong>Classification-Report</strong>, <strong>Confusion Matrix</strong> and <strong>Predicted Species</strong> which were constructed:</p>
+        <img src="Classification-Report.jpg" alt="Training Loss Visualization" class="profile-img">
+        <img src="CNN-Matrix.png" alt="Confusion Matrix Visualization" class="profile-img">
+        <img src="Predicted-1.png" alt="Predicted Species Visualization" class="profile-img">
+    </section>
+
+    <section id="Algorithms" class="about">
+        <h2>Algorithms</h2>
+        <p>The <strong>Convolutional Neural Network (CNN)</strong> algorithm was used to classify the insect images into 9 species. CNNs are <strong>deep learning</strong> models specifically designed for processing grid-like data such as images. They work by automatically learning hierarchical features through convolutional filters that scan the input image.</p>
+        <p>In this project, the CNN architecture consisted of:</p>
+        <ul>
+            <li>Two <strong>convolutional layers</strong> with ReLU activation (32 and 64 filters respectively)</li>
+            <li><strong>Max-pooling layers</strong> for dimensionality reduction</li>
+            <li>Two <strong>fully connected layers</strong> for final classification</li>
+            <li><strong>Dropout</strong> (50%) to prevent overfitting</li>
+        </ul>
+        <p>The model was trained using the <strong>Adam optimizer</strong> with a learning rate of 0.001 and <strong>cross-entropy loss</strong> function. The dataset was automatically split into training and validation sets during the training process. The model achieved <strong>high accuracy</strong>, as demonstrated by the <strong>confusion matrix</strong> and <strong>classification report</strong>.</p>
+    </section>
+    
+    <section id="Online-Sources" class="about">
+        <h2>Online Sources</h2>
+        <p>Online sources that help with the construction of the CNN model:</p>
+        <p><a href="https://github.com/tromgy/simple-neural-networks/blob/master/neural-network.ipynb"><strong>Getting an understanding of how neural networks works</strong></a></p>
+        <p><a href="https://github.com/lballore/deep-learning-with-python/blob/master/notebooks/chapter_05/01%20-%20Introduction%20to%20CNN.ipynb"><strong>NoteBook example for CNN</strong></a></p>
+        <p><a href="https://www.kaggle.com/datasets/yashdogra/insectv2-dataset?resource=download"><strong>Insect Dataset</strong></a></p>
+    </section>
+    
+    <section id="Tools-Used" class="about">
+        <h2>Tools Used</h2>
+        <p>This project was implemented using the following tools:</p>
+        <ul>
+            <li><strong>PyTorch</strong>: For building and training the CNN model</li>
+            <li><strong>Torchvision</strong>: For image transformations and datasets</li>
+            <li><strong>Jupyter Notebook</strong>: For developing and running the Python code</li>
+            <li><strong>Matplotlib/Seaborn</strong>: For visualizations and performance metrics</li>
+            <li><strong>Scikit-learn</strong>: For generating classification reports</li>
+            <li><strong>Pillow (PIL)</strong>: For image processing in deployment</li>
+        </ul>
+    </section>
+    
+    <footer>
+        &copy; 2024 Your Name. All rights reserved.
+        <p><a href="https://github.com/yourusername"><strong>GitHub</strong></a></p>
+    </footer>
+</body>
+</html>
