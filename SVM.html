@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris flower predication</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="Iris" class="hero">
+        <div class="container">
+            <h1>Iris flower predictions using the <strong>Support Vector Machine Model (SVM)</strong></h1>
+            <p>A machine learning project that uses <strong>SVM's</strong> to predict the species of flower a iris is, based on the flower's <strong>sepal length</strong> and <strong>width</strong>.</p>
+        </div>
+    </section>
+
+    <section id="project-details" class="projects">
+        <h2>Project Overview</h2>
+        <div class="project-content">
+            <p><strong>Why choose this?</strong></p>
+            <p>When searching for a suitable dataset to use for this project, I wanted to pick something that was <strong>interesting</strong> and could be used. The whole idea of this project is to be able to <strong>classify</strong> the flowers into their representative species.</p>         
+            <p>The model shows how a <strong>"Target"</strong> interacts with <strong>"Features"</strong>. With this data, having a function in place to allow for <strong>user input</strong> will allow for an accurate prediction of the species of flower just based off of the <strong>length</strong> and <strong>width</strong> of the sepal.</p>             
+            <p><strong>SVM's</strong> were selected for this project because of their ability to perform <strong>multi-class classification</strong>, as the <strong>"Target"</strong> variable in the dataset represents the species of flower. It works well with classifying which species the user input will belong to.</p>
+            <p>From the dataset, the data that was used in this was, for the <strong>"Target"</strong>, all three species of iris flower, and for the <strong>"Feature"</strong>, just the <strong>sepal length</strong> and <strong>width</strong>.</p>
+        </div>
+    </section>
+
+    <section id="Data-Sources" class="about">
+        <h2>Data Sources/Preprocessing</h2>
+        <p>The <strong>iris dataset</strong> was taken from the <strong>sklearn.datasets</strong> using <strong>load_iris</strong>.</p>
+        <p>There was <strong>no preprocessing</strong> done for this model, as the dataset was very <strong>clean</strong> and <strong>functional</strong>.</p>
+    </section>
+
+    <section id="Data-Visualization" class="about">
+        <h2>Data Visualization and Understanding</h2>
+        <p>Using <strong>Python (Jupyter Notebook)</strong> and the import <strong>matplotlib.pyplot as plt</strong>, I visualized a single <strong>scatter plot</strong> diagram. Inside the scatter plot, it shows the three different <strong>Targets</strong>, which are <strong>color-coded</strong> to be able to distinguish them, as well as a <strong>legend</strong> to allow readers to identify them.</p>
+        <p>Inside of the scatter plot, there are many different <strong>data points</strong> that can be seen. These points are all the different species that are located in the dataset.</p>
+        <p>Also, a <strong>confusion matrix</strong> was constructed to observe the model's performance.</p>
+        <p>Below are the <strong>Scatter plot</strong> and <strong>Confusion Matrix</strong> which were constructed:</p>
+        <img src="SVM-ScatterPlot.png" alt="Scatter plot Visualization" class="profile-img">
+        <img src="SVM-ConfusionMatrix.png" alt="Confusion Matrix Visualization" class="profile-img">
+    </section>
+
+    <section id="Algorithms" class="about">
+        <h2>Algorithms</h2>
+        <p>The <strong>Support Vector Machine (SVM)</strong> algorithm was used to classify the Iris dataset into its three species: <strong>Setosa</strong>, <strong>Versicolor</strong>, and <strong>Virginica</strong>. SVM is a <strong>supervised machine learning</strong> algorithm that works by finding the <strong>optimal hyperplane</strong> that best separates the data into different classes. The goal of SVM is to maximize the <strong>margin</strong> between the hyperplane and the nearest data points (called <strong>support vectors</strong>) from each class.</p>
+        <p>In this project, a <strong>linear kernel</strong> was used, which assumes that the data can be separated by a <strong>straight line</strong> (or hyperplane in higher dimensions). The <strong>linear kernel</strong> was chosen because the Iris dataset is relatively <strong>simple</strong> and <strong>linearly separable</strong>, especially when using only two features (<strong>sepal length</strong> and <strong>sepal width</strong>). However, SVM can also handle <strong>non-linear decision boundaries</strong> using other kernels, such as the <strong>Radial Basis Function (RBF)</strong> or <strong>polynomial kernels</strong>.</p>
+        <p>The SVM model was trained on <strong>80%</strong> of the dataset, with the remaining <strong>20%</strong> used for testing. The model achieved <strong>high accuracy</strong>, as demonstrated by the <strong>confusion matrix</strong> and <strong>classification report</strong>. The <strong>decision boundaries</strong> were visualized to better understand how the model separates the classes.</p>
+    </section>
+    
+    <section id="Online-Sources" class="about">
+        <h2>Online Sources</h2>
+        <p>Two different online sources were mainly used in the creation of this SVM model. They were used as a foundation in order for the model to be built on:</p>
+        <p><a href="https://jakevdp.github.io/PythonDataScienceHandbook/05.07-support-vector-machines.html"><strong>SVM explanation and code example notebook</strong></a></p>
+        <p><a href="https://archive.ics.uci.edu/dataset/53/iris"><strong>iris dataset</strong></a></p>
+    </section>
+    
+    <section id="Tools-Used" class="about">
+        <h2>Tools Used</h2>
+        <p>This project was implemented using the following tools:</p>
+        <ul>
+            <li><strong>Jupyter Notebook</strong>: For developing and running the Python code.</li>
+            <li><strong>Pandas</strong>: For data manipulation and preprocessing.</li>
+            <li><strong>NumPy</strong>: For efficient numerical computations.</li>
+            <li><strong>Scikit-Learn</strong>: For implementing and visualizing the SVM model.</li>
+            <li><strong>Matplotlib</strong>: For visualizing the decision boundaries and scatter plots.</li>
+            <li><strong>Seaborn</strong>: For creating the confusion matrix heatmap.</li>
+        </ul>
+    </section>
+    
+    <footer>
+        &copy; 2024 Luka Brennan. All rights reserved.
+        <p><a href="https://github.com/LukaBrennan"><strong>GitHub</strong></a></p>
+    </footer>
+</body>
+</html>
